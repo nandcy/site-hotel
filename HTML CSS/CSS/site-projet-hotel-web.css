@@ -1,0 +1,615 @@
+/*-------------Page Accueil--------------------*/
+/*-----COMMUNS---------*/
+body{
+    width: 100%;
+    margin: 0;
+}
+body#accueil{
+    background-color: #fae6d9;
+}
+header,h1,h2,footer{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Parisienne', cursive;;
+}
+/*------HEADER----------*/
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;/*enlever les puces*/
+    padding: 20px 150px;
+}
+
+li {
+    font: 50px;
+    color: black;
+    display: inline;/*sur la même ligne*/
+    padding: 20px;/*marge espacement*/
+  }
+  nav a{
+    text-decoration: none;/*enlever surlignement*/
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+nav a:hover { /*effet survol*/
+    color: #0baab3;
+  }
+.nav{
+    background-color:#B89B88;
+    text-align: center;
+}
+/*-------SECTIONS------------*/
+.categorie div {
+    width: 50%;
+    height: 400px;
+    padding: 80px;
+}
+.hotel,.thalasso{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+.restaurant{
+    display: flex;
+    justify-content: space-between;
+}
+.hotel .image-cover{
+    background-image: url(../IMAGES/ACCUEIL/Chambre-design-bleu.jpg);
+}
+.restaurant .image-cover{
+    background-image: url(../IMAGES/ACCUEIL/restaurant-vue\ panoramique-mer.jpg);
+}
+.thalasso .image-cover{
+    background-image: url(../IMAGES/ACCUEIL/espace-thalsso-piscine-couverte.jpg);
+}
+.image-cover{
+    background-size: cover ;
+    background-position: center;
+}
+.presentation{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center; 
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.button {
+    background-color: #0baab3;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 50px 20px 20px;
+  }
+
+#map{
+    position: relative;
+    width: 100%;
+}
+#etiquette {
+    position: relative;
+    left: 1000px;
+    top:-350px;
+    width: 300px;
+    background-color: white;
+}
+.titre{
+    text-align: center;
+}
+.icone {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*-------FOOTER------------------*/
+.trait{ 
+    width: 100%;
+    border:1px solid grey ;
+   }
+   .subfooter{
+       display: flex;
+       justify-content: space-around;
+       text-align: center;
+   }
+  /*-------PAGE HOTEL-----------------*/ 
+ .mise-en-forme{
+     height:200px;
+     padding: 100px;
+ }
+  
+  /*-------CARROUSEL-----------------*/
+  .gallery {
+    width: 100%;
+    height: 500px;
+    background-color: #b8f8fa;
+  }
+  
+  .gallery-container {
+    align-items: center;
+    display: flex;
+    height: 400px;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+  }
+  
+  .gallery-item {
+    height: 150px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 150px;
+    z-index: 0;
+  }
+  
+  .gallery-item-1 {
+    left: 15%;
+    opacity: .4;
+    transform: translateX(-50%);
+  }
+  
+  .gallery-item-2,
+  .gallery-item-4 {
+    height: 200px;
+    opacity: 1;
+    width: 200px;
+    z-index: 1;
+  }
+  
+  .gallery-item-2 {
+    left: 30%;
+    transform: translateX(-50%);
+  }
+  
+  .gallery-item-3 {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    height: 300px;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 2;
+  }
+  
+  .gallery-item-4 {
+    left: 70%;
+    transform: translateX(-50%);
+  }
+  
+  .gallery-item-5 {
+    left: 85%;
+    opacity: .4;
+    transform: translateX(-50%);
+  }
+  
+  .gallery-controls {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  
+  .gallery-controls button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 20px;
+    padding: 0 12px;
+    text-transform: capitalize;
+  }
+  
+  .gallery-controls button:focus {
+    outline: none;
+  }
+  
+  .gallery-controls-previous {
+    position: relative;
+    
+  }
+  
+  .gallery-controls-previous::before {
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    left: -10px;
+    padding: 2px;
+    position: absolute;
+    top: 0;
+    transform: rotate(135deg) translateY(-50%);
+    transition: left 0.15s ease-in-out;
+    width: 4px;
+  }
+  
+  .gallery-controls-previous:hover::before {
+    left: -18px;
+  }
+  
+  .gallery-controls-next {
+    position: relative;
+ 
+  }
+  
+  .gallery-controls-next::before {
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    padding: 2px;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: right 0.15s ease-in-out;
+    width: 4px;
+  }
+  
+  .gallery-controls-next:hover::before {
+    right: -18px;
+  }
+  
+  .gallery-nav {
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .gallery-nav li {
+    background: #ccc;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 16px;
+    width: 10px;
+  }
+  
+  .gallery-nav li.gallery-item-selected {
+    background: #555;
+  }
+  /*-------PAGE RESTAUIRANT-----------------*/ 
+ 
+
+ /*-------CARROUSEL-----------------*/
+ .css-slider {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  label {
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .slide {
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    -webkit-transition: left 0s .75s;
+    transition: left 0s .75s;
+  }
+  .slide-one{
+      background-image: url(../IMAGES/RESTAURANT/Plateau\ de\ fruits\ de\ mer.jpg);
+  }
+  .slide-two{
+    background-image: url(../IMAGES/RESTAURANT/plat\ viande.jpg);
+}
+.slide-three{
+    background-image: url(../IMAGES/RESTAURANT/plat\ saumon.jpg);
+}
+  
+  [id^="slide"]:checked + .slide {
+    left: 0;
+    z-index: 100;
+    -webkit-transition: left .65s ease-out;
+    transition: left .65s ease-out;
+  }
+  .buttonbottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+  }
+  
+  .buttonbottom label {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin: 20px 10px;
+  }
+  
+  .fleches {
+    position: absolute;
+    top: 50%;
+    margin-top: -42px;
+    z-index: 900;
+    width: 100%;
+  }
+  
+  .fleches label { font-size: 50px; }
+  
+  .buttonbottom label:hover { background: #2e353b; }
+  
+  .prev {
+    position: absolute;
+    left: 10px;
+  }
+  
+  .next {
+    position: absolute;
+    right: 10px;
+  }
+  
+  .slide .prev, .slide .next { opacity: 0; }
+  
+  [id^="slide"]:checked + .slide .prev, [id^="slide"]:checked + .slide .next {
+    opacity: 1;
+    -webkit-transition: all .5s .5s;
+    transition: all .5s .5s;
+  }
+  .slide {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: -webkit-transform .5s .5s, opacity .5s;
+    transition: transform .5s .5s, opacity .5s;
+  }
+  
+  [id^="slide"]:checked + .slide {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all .5s .5s;
+    transition: all .5s .5s;
+  }
+  .etiquettecarrousel{
+      position:absolute;
+      left: 350px;
+      top: 100px;
+      width: 50%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding-bottom: 20px;
+  }
+    /*-------PAGE RESTAURANT-----------------*/ 
+ 
+
+ /*-------CARROUSEL-----------------*/
+ .slide-one-thalasso{
+    background-image: url(../IMAGES/THALASSO/piscine-interieur-vue-mer.jpg);
+}
+.slide-two-thalasso{
+  background-image: url(../IMAGES/THALASSO/slide/piscine-thalasso-bain-a-remous.jpg);
+}
+.slide-three-thalasso{
+  background-image: url(../IMAGES/THALASSO/slide/thalasso-soin-affusion.jpg);
+}
+   /*-------PAGE FORFAITS-----------------*/ 
+.journee ,.sejour{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+.week-end{
+    display: flex;
+    justify-content: space-between;
+}
+.journee .image-cover{
+    background-image: url(../IMAGES/FORFAITS/sauna.jpg);
+}
+.week-end .image-cover{
+    background-image: url(../IMAGES/FORFAITS/massage.jpg);
+}
+.sejour .image-cover{
+    background-image: url(../IMAGES/FORFAITS/femme-piscine-jet.jpg);
+}
+/*-------PAGE FORFAITS-----------------*/ 
+/*-------PAGE CONTACT-----------------*/
+.transport h2{
+  color: #B89B88;
+}
+.transport{
+  text-align: center;
+}
+   .formulaire{
+     display: flex;
+     justify-content: center;
+   }
+  
+    form {
+    padding: 25px;
+    margin: 25px;
+    box-shadow: 0 2px 5px #f5f5f5; 
+    background: #f5f5f5; 
+    }
+    input, textarea {
+    width: calc(100% - 18px);
+    padding: 8px;
+    margin-bottom: 20px;
+    outline: none;
+    }
+    input::placeholder {
+    color: #666;
+    }
+    button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #1c87c9; 
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    }
+    button:hover {
+    background: #2371a0;
+    }    
+    .left-part, form {
+    width: 50%;
+    }
+    /*------------carte et menus-----------*/
+    .triptyque{
+      height: 400px;
+      display: flex;
+      justify-content: space-around;
+    }
+    .image1{
+      width: 50%;
+      background-image: url(../IMAGES/RESTAURANT/entrée\ saumon.jpg);
+    }
+    .image2{
+      width: 50%;
+      background-image: url(../IMAGES/RESTAURANT/plat\ viande\ cote.jpg);
+     
+    }.image3{
+      width: 50%;
+      background-image: url(../IMAGES/RESTAURANT/dessert\ choco.jpg); 
+    }
+    .carte-et-menus{
+      text-align: center;
+      padding: 40px;
+      background-color: #fae6d9;
+    }
+    .retour{
+      text-align: center;
+      padding: 40px;
+      background-color: #fae6d9;
+    }
+    .carte-et-menus h1{
+      color: #B89B88;
+      font-size: 30px;
+    }
+    .carte-et-menus h2{
+      color: #0baab3;
+      font-size: 25px;
+    }
+    .carte-et-menus h3{
+      color: #0baab3;
+      font-size: 20px;
+    }
+    .image4{
+      width: 50%;
+      background-image: url(../IMAGES/RESTAURANT/entrée\ salade\ tomates\ feta.jpg);
+    }
+    .image5{
+      width: 50%;
+      background-image: url(../IMAGES/RESTAURANT/plat\ poisson\ blanc.jpg);
+    }
+    .image6{
+      width: 50%;
+      background-image: url(../IMAGES/RESTAURANT/dessert\ framboises.jpg);
+    }
+    /*------------carte des soins-----------*/
+  main {
+    background-color: #fae6d9;
+  }
+  .cures,.duos,.soins2{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+  }
+  .massages,.soins{
+      display: flex;
+      justify-content: space-between;
+  }
+  .cures .image-cover{
+      background-image: url(../IMAGES/THALASSO/carte/piscine-femme-detente.jfif);
+  }
+  .duos .image-cover{
+      background-image: url(../IMAGES/THALASSO/carte/massage-couple-dos.jpg);
+  }
+  .soins2 .image-cover{
+      background-image: url(../IMAGES/THALASSO/carte/bain-bouillonant.jpg);
+  }
+  .massages .image-cover{
+    background-image: url(../IMAGES/THALASSO/carte/massage-homme.jpg);
+}
+.soins .image-cover{
+  background-image: url(../IMAGES/THALASSO/carte/massage-couple-visage.jfif);
+}
+  /*------------forfaits journée-----------*/
+  main {
+    background-color: #fae6d9;
+  }
+  .journee1,.journee3{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+  }
+  .journee2{
+      display: flex;
+      justify-content: space-between;
+  }
+  .journee1 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/enveloppement-boue.jpg);
+  }
+  .journee2 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/femme-bain-detente.jpg);
+  }
+  .journee3 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/femme-massage-couleur-marron.jpg);
+  }
+  /*------------forfaits week end-----------*/
+  main {
+    background-color: #fae6d9;
+  }
+  .week1,.week3{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+  }
+  .week2{
+      display: flex;
+      justify-content: space-between;
+  }
+  .week1 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/week-end-evasion.jfif);
+  }
+  .week2 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/week-end-amoureux.jfif);
+  }
+  .week3 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/week-end-detente-extrême.jfif);
+  }
+  /*------------forfaits sejour-----------*/
+  main {
+    background-color: #fae6d9;
+  }
+  .sejour1,.sejour3{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+  }
+  .sejour2 {
+      display: flex;
+      justify-content: space-between;
+  }
+  .sejour1 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/cure-beaute-minceur.jfif);
+  }
+  .sejour2 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/sejou-vitalite.jfif);
+  }
+  .sejour3 .image-cover{
+      background-image: url(../IMAGES/FORFAITS/annexe/sejour-relaxation.jfif);
+  }
